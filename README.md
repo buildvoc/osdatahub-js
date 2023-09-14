@@ -37,8 +37,22 @@ Ordnance Survey is the national mapping agency for Great Britain and produces a 
     - [Browser](#browser)
   - [Getting Started](#getting-started)
     - [OS NGD API](#os-ngd-api)
+      - [**Features (Collection Items)**](#features-collection-items)
+      - [**Feature (Single Collection Item)**](#feature-single-collection-item)
+      - [**Collections**](#collections)
+      - [**Schema**](#schema)
+      - [**Queryables**](#queryables)
     - [OS Places API](#os-places-api)
+      - [**GeoJSON Polygon**](#geojson-polygon)
+      - [**Point-Based Radius**](#point-based-radius)
+      - [**Nearest Feature**](#nearest-feature)
+      - [**Bounding Box**](#bounding-box)
+      - [**UPRN (Unique Property Reference Number)**](#uprn-unique-property-reference-number)
+      - [**Postcode (Full or Partial)**](#postcode-full-or-partial)
+      - [**Find (Plain Text Search)**](#find-plain-text-search)
     - [OS Names API](#os-names-api)
+      - [**Nearest Feature**](#nearest-feature-1)
+      - [**Find (Plain Text Search)**](#find-plain-text-search-1)
   - [Authors](#authors)
   - [Contribute](#contribute)
     - [Support](#support)
@@ -139,6 +153,7 @@ Different APIs support different search operations. Let's explore them...
 The OS NGD API can be accessed via `osdatahub.ngd`. For further information on using the OS NGD API and its capabilities, please refer to the [OS Data Hub](https://osdatahub.os.uk/docs/ofa/overview) documentation and technical specification.
 
 #### [**Features (Collection Items)**](https://ordnancesurvey.github.io/osdatahub-js/docs/functions/ngd.features.html)
+Examples https://labs.os.uk/public/osngd/os-ngd-api-features/examples/collections.html 
 
 Get GeoJSON features from a specific product collection (e.g. Building Parts),
 using various parameter filters and/or geospatial filters
@@ -150,7 +165,10 @@ osdatahub.ngd.features(apiKey, collectionId, {});
 Parameters:
 
 - `apiKey` (string) - Your OS Data Hub API Key
-- `collectionId` (string) - A valid collection ID e.g. (bld-fts-buildingpart)
+- `collectionId` (string) - A valid collection ID e.g
+  - (bld-fts-buildingpart) relativeheightroofbase >=15.5 and oslandusetiera ='Residential Accommodation' (building over 18m)
+    - relativeheightroofbase The difference in height between the intersection of the external building walls and the underlying ground surface and the base of the roof of the building.
+  - (lnd-fts-land-1) description = 'Construction Site'
 
 Optional Parameters (add as named arguments e.g. `{crs: 27700}`):
 
